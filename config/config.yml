@@ -1,0 +1,14 @@
+http:
+  address: ":8080"
+
+postgres:
+  host: "db"
+  port: 5432
+  user: "postgres"
+  password: "postgres"
+  dbname: "app_db"
+  sslmode: "disable"
+  migrationPath: "/app/pkg/postgres_connect/migrations"
+
+prometheus:
+  port: 9090
