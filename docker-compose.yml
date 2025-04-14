@@ -18,7 +18,8 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - "8080:8080"
-      - "9090:9090"
+    expose:
+      - "9090"
     environment:
       POSTGRES_HOST: db
       POSTGRES_PORT: 5432

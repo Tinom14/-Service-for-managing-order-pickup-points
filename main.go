@@ -41,9 +41,8 @@ func main() {
 	ProductHandlers := http.NewProductHandler(ProductService)
 
 	r := chi.NewRouter()
-	UserHandlers.WithUserHandlers(r)
-
 	r.Use(http.PrometheusMiddleware)
+	UserHandlers.WithUserHandlers(r)
 
 	r.Route("/", func(r chi.Router) {
 		r.With(http.AuthMiddleware([]string{"moderator"})).Post("/pvz", PvzHandlers.OpenPvzHandler)
